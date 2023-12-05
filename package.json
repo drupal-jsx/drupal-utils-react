@@ -1,0 +1,12 @@
+{
+  "name": "@drupal-jsx/drupal-utils-react",
+  "type": "module",
+  "dependencies": {
+    "@drupal-jsx/drupal-utils": "github:drupal-jsx/drupal-utils",
+    "@drupal-jsx/propsify": "github:drupal-jsx/propsify"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
