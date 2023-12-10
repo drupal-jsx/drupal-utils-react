@@ -10,4 +10,12 @@ const render = (App, container) => {
 
 export function main({ components }) {
   _main({ components, propsify, h, Fragment, render });
+
+  // React defers DOM commits to a fiber, so delay Drupal behaviors by a tick so
+  // that they run after that fiber.
+  Drupal.attachBehaviors = new Proxy(Drupal.attachBehaviors, {
+    apply: function (target, thisArg, argumentsList) {
+      setTimeout(() => { target(...argumentsList) }, 0);
+    }
+  });
 }
